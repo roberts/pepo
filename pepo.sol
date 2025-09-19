@@ -514,7 +514,7 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
     ) external;
 }
 
-contract Cash is ERC20, Ownable {
+contract Pepo is ERC20, Ownable {
     IUniswapV2Router02 public immutable uniswapV2Router;
     address public uniswapV2Pair;
     address public constant deadAddress =
@@ -575,7 +575,7 @@ contract Cash is ERC20, Ownable {
         address indexed oldWallet
     );
 
-    constructor() ERC20("Swamp Cash", "CASH") Ownable(msg.sender) {
+    constructor() ERC20("Pepo", "PEPO") Ownable(msg.sender) {
         uniswapV2Router = IUniswapV2Router02(
             0x4752ba5DBc23f44D87826276BF6Fd6b1C372aD24
         );
