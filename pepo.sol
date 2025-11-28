@@ -3,8 +3,7 @@
  *
     Contract features:
     100,000,000 tokens
-    3% buy tax in ETH sent to community, marketing & developer
-    16% launch sell tax in ETH sent to community, marketing, & developer
+    Lopsided tax structure for fair launch
     Function to reduce taxes to 3/3
     Function to remove taxes
     Removable anti-whale restrictions of max transaction & max wallet
@@ -577,7 +576,7 @@ contract Pepo is ERC20, Ownable {
 
     constructor() ERC20("Pepo", "PEPO") Ownable(msg.sender) {
         uniswapV2Router = IUniswapV2Router02(
-            0x4752ba5DBc23f44D87826276BF6Fd6b1C372aD24
+            0xfB8e1C3b833f9E67a71C859a132cf783b645e436
         );
         _approve(address(this), address(uniswapV2Router), type(uint256).max);
 
@@ -602,9 +601,9 @@ contract Pepo is ERC20, Ownable {
             marketingLopsidedSellTax +
             developerLopsidedSellTax;
 
-        communityWallet = address(0xC6aa2f0FF6b8563EA418ec2558890D6027413699); // Community Funds
-        marketingWallet = address(0xC6aa2f0FF6b8563EA418ec2558890D6027413699); // Marketing Funds
-        developerWallet = address(0xA6d26E99660de4974B8994eCF75dcD4Cf34951B6); // Developer Funds
+        communityWallet = address(0xdeb333a3240eb2e1ca45d38654c26a8c1aad0507); // Community Funds
+        marketingWallet = address(0xdeb333a3240eb2e1ca45d38654c26a8c1aad0507); // Marketing Funds
+        developerWallet = address(0xdeb333a3240eb2e1ca45d38654c26a8c1aad0507); // Developer Funds
 
         _mint(address(this), totalSupply);
 
